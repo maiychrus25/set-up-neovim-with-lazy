@@ -13,7 +13,7 @@ return {
         none_ls.builtins.formatting.stylua,
 
         -- JS / TS / JSON / HTML / CSS
-        none_ls.builtins.formatting.prettier,
+        -- none_ls.builtins.formatting.prettier,
 
         -- Ruby
         none_ls.builtins.diagnostics.rubocop,
@@ -40,6 +40,9 @@ return {
               vim.lsp.buf.format({
                 bufnr = bufnr,
                 timeout_ms = 2000,
+                filter = function(client)
+                  return client.name == "null-ls"
+                end,
               })
             end,
           })
@@ -49,7 +52,12 @@ return {
 
     -- Format thủ công
     vim.keymap.set("n", "<leader>gf", function()
-      vim.lsp.buf.format({ async = true })
+      vim.lsp.buf.format({ 
+        async = true,
+        filter = function(client)
+          return client.name == "null-ls"
+        end,
+      })
     end, { desc = "Format file" })
   end,
 }
