@@ -53,39 +53,50 @@ return {
 			}
 			vim.lsp.enable("lua_ls")
 
-
 			-- ESLint
 			vim.lsp.config["eslint"] = {
 				capabilities = capabilities,
-        settings = {
-          run = "onSave",
-          format = true,
-        }
+				settings = {
+					run = "onSave",
+					format = true,
+				},
 			}
 
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
-        callback = function()
-          vim.lsp.buf.format({
-            filter = function(client)
-              return client.name == "eslint"
-            end,
-          })
-        end,
-      })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+				callback = function()
+					vim.lsp.buf.format({
+						filter = function(client)
+							return client.name == "eslint"
+						end,
+					})
+				end,
+			})
 
 			-- TypeScript / JavaScript
-      vim.lsp.config["ts_ls"] = {
-        capabilities = capabilities,
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-       end,
-      }
+			vim.lsp.config["ts_ls"] = {
+				capabilities = capabilities,
+				on_attach = function(client)
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+				end,
+			}
 
 			-- TailwindCSS
 			vim.lsp.config["tailwindcss"] = {
 				capabilities = capabilities,
+				filetypes = {
+					"html",
+					"css",
+					"scss",
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"vue",
+					"svelte",
+					"astro",
+				},
 			}
 
 			-- Python
