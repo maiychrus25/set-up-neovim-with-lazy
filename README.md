@@ -3,19 +3,19 @@
 Cấu hình Neovim được tối ưu hóa cho **Web Development** (đặc biệt là
 Pug, HTML, CSS, JavaScript).
 
--   ⚡ Sử dụng **Lazy.nvim** để quản lý plugin\
--   🧠 Tích hợp **LSP** cho gợi ý code thông minh\
--   🌳 Dùng **Treesitter** để tô màu cú pháp chính xác\
--   🐧 Đã vá lỗi tương thích cho **WSL (Ubuntu 20.04 / 22.04)**\
--   🎨 Sửa lỗi hiển thị & indent cho **Pug**
+- ⚡ Sử dụng **Lazy.nvim** để quản lý plugin\
+- 🧠 Tích hợp **LSP** cho gợi ý code thông minh\
+- 🌳 Dùng **Treesitter** để tô màu cú pháp chính xác\
+- 🐧 Đã vá lỗi tương thích cho **WSL (Ubuntu 20.04 / 22.04)**\
+- 🎨 Sửa lỗi hiển thị & indent cho **Pug**
 
-------------------------------------------------------------------------
+---
 
 ## 🛠 1. Yêu cầu hệ thống (Prerequisites)
 
 ### A. Cài đặt Compiler & Tools
 
-``` bash
+```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install build-essential g++ make unzip ripgrep fd-find -y
 sudo apt install nodejs npm -y
@@ -23,7 +23,7 @@ sudo apt install nodejs npm -y
 
 ### B. Sửa lỗi GLIBC cho Treesitter (WSL)
 
-``` bash
+```bash
 sudo npm uninstall -g tree-sitter-cli
 sudo npm install -g tree-sitter-cli@0.22.6
 ```
@@ -34,7 +34,7 @@ sudo npm install -g tree-sitter-cli@0.22.6
 2.  Cài file `.ttf`\
 3.  Chọn font trong Windows Terminal
 
-------------------------------------------------------------------------
+---
 
 ## 📂 2. Cấu trúc thư mục
 
@@ -53,21 +53,23 @@ sudo npm install -g tree-sitter-cli@0.22.6
         └── ftplugin
             └── pug.lua
 
-------------------------------------------------------------------------
+---
 
 ## ⚡ 3. Plugin chính
 
-  Plugin            Chức năng
-  ----------------- ------------------
-  Lazy.nvim         Quản lý plugin
-  Nvim-treesitter   Syntax highlight
-  Mason             Cài LSP server
-  Nvim-lspconfig    Kết nối LSP
-  Nvim-cmp          Auto-completion
-  LuaSnip           Snippet
-  Emmet LS          Emmet support
+Plugin Chức năng
 
-------------------------------------------------------------------------
+---
+
+Lazy.nvim Quản lý plugin
+Nvim-treesitter Syntax highlight
+Mason Cài LSP server
+Nvim-lspconfig Kết nối LSP
+Nvim-cmp Auto-completion
+LuaSnip Snippet
+Emmet LS Emmet support
+
+---
 
 ## ⌨️ 4. Keymaps
 
@@ -75,25 +77,25 @@ sudo npm install -g tree-sitter-cli@0.22.6
 
 ### Auto-completion
 
--   `Tab` → Next suggestion / snippet jump\
--   `Shift + Tab` → Previous suggestion\
--   `Enter` → Confirm\
--   `Ctrl + Space` → Trigger completion
+- `Tab` → Next suggestion / snippet jump\
+- `Shift + Tab` → Previous suggestion\
+- `Enter` → Confirm\
+- `Ctrl + Space` → Trigger completion
 
 ### LSP
 
--   `K` → Hover docs\
--   `gd` → Go to definition\
--   `<Space> + ca` → Code action\
--   `<Space> + rn` → Rename
+- `K` → Hover docs\
+- `gd` → Go to definition\
+- `<Space> + ca` → Code action\
+- `<Space> + rn` → Rename
 
 ### Plugin Manager
 
--   `:Lazy`
--   `:Mason`
--   `:checkhealth`
+- `:Lazy`
+- `:Mason`
+- `:checkhealth`
 
-------------------------------------------------------------------------
+---
 
 ## 🐛 Troubleshooting
 
@@ -101,7 +103,7 @@ sudo npm install -g tree-sitter-cli@0.22.6
 
 Chạy:
 
-``` vim
+```vim
 :TSInstall! pug
 ```
 
@@ -115,16 +117,15 @@ Cài lại tree-sitter-cli@0.22.6.
 
 Vào `:Mason` và cài `emmet-language-server`.
 
-------------------------------------------------------------------------
+---
 
 ## ✨ Custom PUG Setup
 
--   Indent 2 spaces\
--   Comment dùng `//-`\
--   Hỗ trợ class có dấu `-`\
--   Highlight chuẩn Treesitter
+- Indent 2 spaces\
+- Comment dùng `//-`\
+- Hỗ trợ class có dấu `-`\
+- Highlight chuẩn Treesitter
 
-------------------------------------------------------------------------
+---
 
 Happy Coding 🚀
-
