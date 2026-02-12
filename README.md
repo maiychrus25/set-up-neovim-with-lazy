@@ -11,9 +11,9 @@ Pug, HTML, CSS, JavaScript).
 
 ------------------------------------------------------------------------
 
-# 🛠 1. Yêu cầu hệ thống (Prerequisites)
+## 🛠 1. Yêu cầu hệ thống (Prerequisites)
 
-## A. Cài đặt Compiler & Tools
+### A. Cài đặt Compiler & Tools
 
 ``` bash
 sudo apt update && sudo apt upgrade -y
@@ -21,14 +21,14 @@ sudo apt install build-essential g++ make unzip ripgrep fd-find -y
 sudo apt install nodejs npm -y
 ```
 
-## B. Sửa lỗi GLIBC cho Treesitter (WSL)
+### B. Sửa lỗi GLIBC cho Treesitter (WSL)
 
 ``` bash
 sudo npm uninstall -g tree-sitter-cli
 sudo npm install -g tree-sitter-cli@0.22.6
 ```
 
-## C. Cài đặt Font (Windows)
+### C. Cài đặt Font (Windows)
 
 1.  Tải JetBrainsMono Nerd Font (hoặc Hack Nerd Font)\
 2.  Cài file `.ttf`\
@@ -36,7 +36,7 @@ sudo npm install -g tree-sitter-cli@0.22.6
 
 ------------------------------------------------------------------------
 
-# 📂 2. Cấu trúc thư mục
+## 📂 2. Cấu trúc thư mục
 
     ~/.config/nvim
     ├── init.lua
@@ -55,7 +55,7 @@ sudo npm install -g tree-sitter-cli@0.22.6
 
 ------------------------------------------------------------------------
 
-# ⚡ 3. Plugin chính
+## ⚡ 3. Plugin chính
 
   Plugin            Chức năng
   ----------------- ------------------
@@ -69,25 +69,25 @@ sudo npm install -g tree-sitter-cli@0.22.6
 
 ------------------------------------------------------------------------
 
-# ⌨️ 4. Keymaps
+## ⌨️ 4. Keymaps
 
 **Leader key = SPACE**
 
-## Auto-completion
+### Auto-completion
 
 -   `Tab` → Next suggestion / snippet jump\
 -   `Shift + Tab` → Previous suggestion\
 -   `Enter` → Confirm\
 -   `Ctrl + Space` → Trigger completion
 
-## LSP
+### LSP
 
 -   `K` → Hover docs\
 -   `gd` → Go to definition\
 -   `<Space> + ca` → Code action\
 -   `<Space> + rn` → Rename
 
-## Plugin Manager
+### Plugin Manager
 
 -   `:Lazy`
 -   `:Mason`
@@ -95,9 +95,9 @@ sudo npm install -g tree-sitter-cli@0.22.6
 
 ------------------------------------------------------------------------
 
-# 🐛 Troubleshooting
+## 🐛 Troubleshooting
 
-## File .pug không có màu
+### File .pug không có màu
 
 Chạy:
 
@@ -107,17 +107,17 @@ Chạy:
 
 Restart Neovim.
 
-## Lỗi GLIBC
+### Lỗi GLIBC
 
 Cài lại tree-sitter-cli@0.22.6.
 
-## Emmet không hoạt động
+### Emmet không hoạt động
 
 Vào `:Mason` và cài `emmet-language-server`.
 
 ------------------------------------------------------------------------
 
-# ✨ Custom PUG Setup
+## ✨ Custom PUG Setup
 
 -   Indent 2 spaces\
 -   Comment dùng `//-`\
