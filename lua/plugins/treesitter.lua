@@ -1,32 +1,32 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    -- Thêm dòng này để tránh lỗi nếu plugin chưa load kịp
+    local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+    if not status_ok then
+      return
+    end
 
-	-- ❗ BẮT BUỘC: plugin này KHÔNG hỗ trợ lazy-loading
-	lazy = false,
-
-	-- ❗ BẮT BUỘC: luôn update parser
-	build = ":TSUpdate",
-
-	config = function()
-		-- setup (không bắt buộc, nhưng nên có)
-		require("nvim-treesitter").setup({
-			install_dir = vim.fn.stdpath("data") .. "/site",
-		})
-
-		-- cài parser (async)
-		require("nvim-treesitter").install({
-			"lua",
-			"vim",
-			"vimdoc",
-			"bash",
-			"json",
-			"html",
-			"css",
-			"javascript",
-			"typescript",
-			"python",
-			"go",
-			"rust",
-		})
-	end,
+    configs.setup({
+      ensure_installed = {
+        "lua", "vim", "vimdoc",
+        "javascript", "typescript", "tsx",
+        "html", "css", "scss", "pug",
+        "json", "yaml", "bash", "markdown", "markdown_inline",
+        "gitignore"
+      },
+      sync_install = false,
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
+      autotag = {
+        enable = true,
+      },
+    })
+  end,
 }
