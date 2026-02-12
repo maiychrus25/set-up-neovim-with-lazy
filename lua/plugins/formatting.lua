@@ -25,7 +25,7 @@ return {
 			format_on_save = {
 				lsp_fallback = true, -- Nếu không có prettier thì dùng LSP mặc định
 				async = false, -- Chạy đồng bộ (chờ format xong mới lưu)
-				timeout_ms = 500, -- Thời gian chờ tối đa
+				timeout_ms = 3000, -- Thời gian chờ tối đa
 			},
 		})
 
